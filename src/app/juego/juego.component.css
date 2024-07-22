@@ -146,7 +146,7 @@ button:hover {
 /* Ajustes específicos para móviles */
 @media (max-width: 599px) {
   .game-board {
-    grid-template-columns: repeat(4, 10vh); /* 4 columnas en móviles */
+    grid-template-columns: repeat(4, 13vh); /* 4 columnas en móviles */
   }
 }
 
