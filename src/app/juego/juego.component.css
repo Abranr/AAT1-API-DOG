@@ -1,0 +1,165 @@
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 20px;
+}
+
+h1 {
+  font-family: 'Georgia', serif; /* Fuente elegante y clásica */
+  color: #4A4A4A; /* Color gris oscuro para un look sofisticado */
+  text-align: center; /* Centra el texto en el contenedor */
+  text-transform: uppercase; /* Hace que el texto esté en mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras para un toque estilizado */
+  margin: 20px 0; /* Espacio arriba y abajo del título */
+  font-size: 2.5em; /* Tamaño de fuente grande para destacar el título */
+}
+.Contador {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3F2305, #DFD7BF);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  text-align: center;
+  width: fit-content;
+}
+
+
+.title {
+  margin-bottom: 20px;
+  text-align: center; /* Asegurar que el título esté centrado en todas las resoluciones */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #606C5D;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3F2305;
+  color: white;
+}
+
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 20vh));
+  gap: 10px;
+  padding: 10px;
+  justify-content: center; /* Centra las cartas horizontalmente */
+  align-items: center;
+  width: 100%;
+
+}
+.card_title {
+  color: #fff;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  transition: transform .5s;
+  font: 700 1.5rem monospace;
+  text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+.card:hover .card_title {
+  transform: translateZ(50px);
+}
+
+.card:hover .card_title {
+  transform: translateZ(50px);
+}
+
+.card {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  perspective: 1000px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease; /* Añadir transición para el efecto 3D */
+}
+
+.card:hover {
+  transform: rotateY(10deg) rotateX(10deg); /* Efecto 3D al hacer hover */
+}
+
+.card-inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background: -webkit-linear-gradient(90deg, #fed2a1,#a97953,#644431);background: linear-gradient(90deg, #fed2a1,#a97953,#644431);
+
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Media queries */
+
+/* Ajustes específicos para móviles */
+@media (max-width: 599px) {
+  .game-board {
+    grid-template-columns: repeat(4, 15vh); /* 4 columnas en móviles */
+  }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 600px) and (max-width: 767px) {
+  .game-board {
+    grid-template-columns: repeat(3, 20vh); /* Ajustar número de columnas */
+  }
+}
+
+/* Ajustes para pantallas más grandes */
+@media (min-width: 768px) {
+  .game-board {
+    grid-template-columns: repeat(4, 20vh);
+  }
+}

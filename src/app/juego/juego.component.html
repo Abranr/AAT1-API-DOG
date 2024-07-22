@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Juego de Memoria</h1>
+  <div  class="Contador" *ngIf="gameStarted">Tiempo: {{counter}} segundos</div>
+  <div class="game-board" *ngIf="gameStarted">
+    <div class="card" *ngFor="let card of cards" [class.flipped]="card.flipped" (click)="flipCard(card)">
+      <div class="card-inner">
+        <figcaption class="card_title">Dog</figcaption>
+        <div class="card-front"></div>
+        <div class="card-back">
+          <img [src]="card.image" alt="Imagen del perro">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="button-container">
+    <button *ngIf="!gameStarted" (click)="startGameAndTimer()">Iniciar Juego</button>
+    <button *ngIf="gameStarted" (click)="resetGame()">Reiniciar juego</button>
+    <button *ngIf="gameStarted" (click)="exitGame()">Salir</button>
+  </div>
+  <p>{{ message }}</p>
+</div>
