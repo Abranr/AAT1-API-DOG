@@ -8,6 +8,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ![alt text](image-2.png)
 ![alt text](image-3.png)
 
+## 🤝 Contribución
+¡Las contribuciones son bienvenidas! Si deseas mejorar este proyecto, siéntete libre de abrir un _pull request_ y contribuir con tus ideas.
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
